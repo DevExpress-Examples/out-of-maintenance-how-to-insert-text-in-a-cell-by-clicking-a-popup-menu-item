@@ -37,8 +37,8 @@
             Settings-Behavior-CreateNew="Disabled" Settings-Behavior-Open="Disabled" 
             Settings-Behavior-SaveAs="Disabled" Settings-Behavior-Save="Disabled"
             ClientInstanceName="spreadsheet" OnCallback="OnSpreadsheetCallback">
-            <ClientSideEvents PopupMenuShowing="function(s, e) { onPopupMenuShowing(s, e); }"
-                CustomCommandExecuted="function(s, e) { onCustomCommandExecuted(s, e); }" />
+            <ClientSideEvents PopupMenuShowing="onPopupMenuShowing"
+                CustomCommandExecuted="onCustomCommandExecuted" />
         </dx:ASPxSpreadsheet>
     </form>
 </body>
