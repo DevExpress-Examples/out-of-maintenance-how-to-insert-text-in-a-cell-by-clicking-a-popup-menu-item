@@ -2,7 +2,7 @@
 
 Follow the steps below to accomplish this task.
 
-<p>- Handle the client-side <strong><a href="https://documentation.devexpress.com/AspNet/DevExpress.Web.ASPxSpreadsheet.SpreadsheetClientSideEvents.PopupMenuShowing.property">PopupMenuShowing</a></strong> and <strong><a href="https://documentation.devexpress.com/AspNet/DevExpress.Web.ASPxSpreadsheet.SpreadsheetClientSideEvents.CustomCommandExecuted.property">CustomCommandExecuted</a></strong> events to add an item that will perform a callback to the server.</p>
+<p>1. Handle the client-side <strong><a href="https://documentation.devexpress.com/AspNet/DevExpress.Web.ASPxSpreadsheet.SpreadsheetClientSideEvents.PopupMenuShowing.property">PopupMenuShowing</a></strong> event to add a custom item to a cell's popup menu.</p>
 
 ```aspx
 <ClientSideEvents PopupMenuShowing="onPopupMenuShowing" CustomCommandExecuted="onCustomCommandExecuted" />
@@ -17,6 +17,14 @@ function onPopupMenuShowing(s, e) {
 		addCustomMenuItem(e.menuItems, insertInCellCommand);
 	}
 }
+
+<p>2. Handle the client-side <strong><a href="https://documentation.devexpress.com/AspNet/DevExpress.Web.ASPxSpreadsheet.SpreadsheetClientSideEvents.CustomCommandExecuted.property">CustomCommandExecuted</a></strong> event and implement logic that will invoke <strong><a href="https://documentation.devexpress.com/AspNet/DevExpress.Web.ASPxSpreadsheet.Scripts.ASPxClientSpreadsheet.PerformCallback.method(zXTuZg)">ASPxClientSpreadsheet.PerformCallback()</a></strong> to forward your custom text to the server as a callback parameter.
+
+```aspx
+<ClientSideEvents CustomCommandExecuted="onCustomCommandExecuted" />
+```
+
+```js
 function onCustomCommandExecuted(s, e) {
 	if (e.commandName === insertInCellCommand.name) {
 		spreadsheet.PerformCallback('text to insert');
@@ -24,7 +32,7 @@ function onCustomCommandExecuted(s, e) {
 }
 ```
 
-<p>- Handle the <strong><a href="https://documentation.devexpress.com/AspNet/DevExpress.Web.ASPxSpreadsheet.ASPxSpreadsheet.Callback.event">ASPxSpreadsheet.Callback</a></strong> event and put the text forwarded to PerformCallback into the active document's selected cell.</p>
+<p>3. On the server side, handle the <strong><a href="https://documentation.devexpress.com/AspNet/DevExpress.Web.ASPxSpreadsheet.ASPxSpreadsheet.Callback.event">ASPxSpreadsheet.Callback</a></strong> event and put the text forwarded to PerformCallback into the active document's selected cell.</p>
 
 ```cs
 protected void OnSpreadsheetCallback(object sender, DevExpress.Web.CallbackEventArgsBase e)
