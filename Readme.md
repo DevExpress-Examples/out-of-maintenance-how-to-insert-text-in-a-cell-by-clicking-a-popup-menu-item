@@ -17,6 +17,7 @@ function onPopupMenuShowing(s, e) {
 		addCustomMenuItem(e.menuItems, insertInCellCommand);
 	}
 }
+```
 
 <p>2. Handle the client-side <strong><a href="https://documentation.devexpress.com/AspNet/DevExpress.Web.ASPxSpreadsheet.SpreadsheetClientSideEvents.CustomCommandExecuted.property">CustomCommandExecuted</a></strong> event and implement logic that will invoke <strong><a href="https://documentation.devexpress.com/AspNet/DevExpress.Web.ASPxSpreadsheet.Scripts.ASPxClientSpreadsheet.PerformCallback.method(zXTuZg)">ASPxClientSpreadsheet.PerformCallback()</a></strong> to forward your custom text to the server as a callback parameter.
 
