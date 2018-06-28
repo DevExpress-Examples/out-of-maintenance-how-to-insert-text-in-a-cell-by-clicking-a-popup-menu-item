@@ -3,6 +3,7 @@
 Follow the steps below to accomplish this task.
 
 <p>- Handle the client-side <strong><a href="https://documentation.devexpress.com/AspNet/DevExpress.Web.ASPxSpreadsheet.SpreadsheetClientSideEvents.PopupMenuShowing.property">PopupMenuShowing</a></strong> and <strong><a href="https://documentation.devexpress.com/AspNet/DevExpress.Web.ASPxSpreadsheet.SpreadsheetClientSideEvents.CustomCommandExecuted.property">CustomCommandExecuted</a></strong> events to add an item that will perform a callback to the server.</p>
+
 ```aspx
 <ClientSideEvents PopupMenuShowing="onPopupMenuShowing" CustomCommandExecuted="onCustomCommandExecuted" />
 ```
