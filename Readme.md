@@ -1,4 +1,7 @@
 # ASPxSpreadsheet - How to insert text in a cell by clicking a custom popup menu item on a callback
+<!-- run online -->
+**[[Run Online]](https://codecentral.devexpress.com/139013900/)**
+<!-- run online end -->
 
 Follow the steps below to accomplish this task.
 
